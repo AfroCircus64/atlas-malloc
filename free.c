@@ -9,5 +9,13 @@
  */
 void _free(void *ptr)
 {
-    /* Code goes here */
+	m_header_t *header;
+
+	if (!ptr)
+	{
+		return;
+	}
+
+	header = (m_header_t *)ptr - 1;
+	header->free = 1;
 }

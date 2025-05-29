@@ -11,13 +11,13 @@ static m_header_t *head;
  */
 static m_header_t *find_free_block(size_t size)
 {
-	m_header_t *curr = head;
+	m_header_t *current = head;
 
-	while (curr)
+	while (current)
 	{
-		if (curr->free && curr->size >= size)
-			return (curr);
-		curr = curr->next;
+		if (current->free && current->size >= size)
+			return (current);
+		current = current->next;
 	}
 	return (NULL);
 }
